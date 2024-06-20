@@ -1,0 +1,256 @@
+/* global */
+body {
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  letter-spacing: 2px;
+}
+
+.great-vibes-font {
+  font-family: "Great Vibes", cursive;
+  text-shadow: 5px 4px 5px rgba(50, 20, 80, 0.9);
+}
+
+/* intro section */
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+  z-index: 3;
+}
+
+.next,
+.prev {
+  margin: 0 15px;
+  padding: 3px;
+  border-radius: 5px;
+  opacity: 0.5;
+  transition: 0.6s all ease;
+  z-index: 15;
+}
+
+.next:hover,
+.prev:hover {
+  opacity: 1;
+}
+
+.title-message {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 50%;
+  z-index: 3;
+  text-align: center;
+  margin-top: -125px;
+  color: whitesmoke;
+  font-size: 4.5rem;
+}
+
+.title-message .heading p {
+  text-shadow: 5px 4px 5px rgba(50, 20, 80, 0.9);
+  font-weight: bold;
+  letter-spacing: 0.7rem;
+}
+
+.title-message .heading .sub {
+  font-size: 2rem;
+  font-weight: 4000;
+}
+
+/* about section */
+
+.facebook-img {
+  width: 15%;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+section {
+  box-shadow: 1px 2px 20px #888888;
+}
+
+.about-img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 2px 5px 40px #888888;
+}
+
+/* skill section */
+#skills {
+  background: linear-gradient(rgba(46, 46, 46, 0.8), rgb(20, 18, 18));
+  color: #fff;
+  font-size: 1rem;
+}
+
+.skill {
+  text-align: center;
+  margin: 1rem;
+}
+
+.chart {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: inline-block;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.chart .percent {
+  color: #000;
+  line-height: 152px;
+  display: inline-block;
+  font-size: 35px;
+}
+
+.chart .percent:after {
+  content: "%";
+}
+
+/* contact section */
+
+.contact-btn {
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* portfolio section */
+
+.filter a {
+  color: #bdc3c7;
+  border: 1px solid #bdc3c7;
+  padding: 10px 18px;
+  display: block;
+}
+
+.filter li {
+  padding: 5px;
+  display: inline-block;
+}
+
+.filter .current {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+.filter {
+  text-align: center;
+  width: 100%;
+}
+
+.section .heading {
+  text-align: center;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.items li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.itemsContainer {
+  width: 100%;
+}
+
+.items li img {
+  width: 100%;
+}
+
+.items .icons {
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  margin: -20px auto 0 -47px;
+  text-align: center;
+  z-index: 3;
+}
+
+.items .item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.items .icons i {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 9px;
+}
+
+.items a {
+  width: 40px;
+  height: 40px;
+  background-color: #e74c3c;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s all ease;
+}
+
+.items .imageOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.4s all ease;
+}
+
+.items .item:hover .imageOverlay {
+  opacity: 1;
+}
+
+#portfolio {
+  background-color: #ddd;
+  min-height: 90vh;
+}
+
+#portfolio h2 {
+  font-size: 2.5rem;
+}
+
+.items .open-btn {
+  float: left;
+  left: -200px;
+}
+
+.items .project-link {
+  float: right;
+  right: -200px;
+}
+
+.items .item:hover .open-btn {
+  left: 0px;
+}
+
+.items .item:hover .project-link {
+  right: 0px;
+}
+
+.items .item img {
+  transition: 0.5s all ease;
+}
+
+.items .item:hover img {
+  transform: scale(1.1, 1.1);
+}
+
+.title {
+  color: red;
+}
