@@ -21,5 +21,3 @@ steps:
 timeout: 660s
 options:
   logging: CLOUD_LOGGING_ONLY
-
-  # docker push us-central1-docker.pkg.dev/georgef-sandbox/portfolio-cicd-k8s/portfolio
