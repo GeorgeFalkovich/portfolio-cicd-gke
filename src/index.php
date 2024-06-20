@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<!-- Contrbuted by GS -->
-<html><head></head><body>
 <?php
-echo "Hello envs!";
-echo $_ENV['MYSQL_USER'];
-while (list($var,$value) = each ($_ENV)) {
-    echo "$var => $value <br />";
-    
+// Display all environment variables
+echo "<h1>Environment Variables</h1>";
+echo "<pre>";
+
+// Using $_SERVER superglobal
+foreach ($_SERVER as $key => $value) {
+    echo "$key => $value\n";
 }
+
+// Using getenv function
+echo "\nUsing getenv function:\n";
+foreach (getenv() as $key => $value) {
+    echo "$key => $value\n";
+}
+
+echo "</pre>";
 ?>
