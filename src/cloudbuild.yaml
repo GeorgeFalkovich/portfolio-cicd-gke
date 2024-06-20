@@ -3,13 +3,13 @@ steps:
     args:
       - build
       - "-t"
-      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA"
+      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio
       - .
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA"
+      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio
     entrypoint: gcloud
 timeout: 1200s
 images:
-  - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA"
+  - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio
