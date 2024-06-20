@@ -9,6 +9,7 @@ RUN apt-get update && \
     apt-get install -y \
     apache2 \
     curl \
+    iputils-ping \
     php \
     libapache2-mod-php \
     php-mysql \
