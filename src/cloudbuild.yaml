@@ -1,17 +1,14 @@
 steps:
-  - name: gcr.io/cloud-builders/docker
+  # Build container
+  - name: "gcr.io/cloud-builders/docker"
     args:
-      - build
-      - "-t"
-      - "portfolio"
-      - .
-  - name: gcr.io/cloud-builders/docker
-    args:
-      - push
-      - "portfolio"
-    entrypoint: gcloud
-timeout: 1200s
-images:
-  - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_IMAGE"
-options:
-  logging: CLOUD_LOGGING_ONLY
+      [
+        "build",
+        "-t",
+        "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}",
+        ".",
+      ]
+    # Push container image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/george-test-335313/gcpdevops"]
+timeout: 660s
