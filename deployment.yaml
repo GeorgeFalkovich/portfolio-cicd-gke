@@ -17,5 +17,16 @@ spec:
       containers:
         - name: portfolio
           image: us-central1-docker.pkg.dev/georgef-sandbox/portfolio-cicd-k8s/portfolio
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
           ports:
             - containerPort: 80
