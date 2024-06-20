@@ -12,6 +12,13 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       ["push", "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}"]
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=gke.yaml
+      - --image="${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}"
+      - --location=us-central1-c
+      - --cluster=my-gke-cluster
 timeout: 660s
 options:
   logging: CLOUD_LOGGING_ONLY
