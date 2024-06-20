@@ -3,15 +3,15 @@ steps:
     args:
       - build
       - "-t"
-      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio"
+      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_IMAGE"
       - .
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio"
+      - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_IMAGE"
     entrypoint: gcloud
 timeout: 1200s
 images:
-  - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/portfolio"
+  - "$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_IMAGE"
 options:
   logging: CLOUD_LOGGING_ONLY
