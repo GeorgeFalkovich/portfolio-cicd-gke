@@ -13,6 +13,5 @@ echo "\nUsing getenv function:\n";
 foreach (getenv() as $key => $value) {
     echo "$key => $value\n";
 }
-
 echo "</pre>";
 ?>
