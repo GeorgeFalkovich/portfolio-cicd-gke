@@ -1,11 +1,10 @@
 steps:
   # Build container
   - name: "gcr.io/cloud-builders/docker"
-    args:
-      [
+    args: [
         "build",
-        "-t",
-        "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}",
+        # "-t",
+        # "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}",
         ".",
       ]
     # Push container image
@@ -15,3 +14,5 @@ steps:
 timeout: 660s
 options:
   logging: CLOUD_LOGGING_ONLY
+
+  # docker push us-central1-docker.pkg.dev/georgef-sandbox/portfolio-cicd-k8s/portfolio
