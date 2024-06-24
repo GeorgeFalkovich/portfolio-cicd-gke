@@ -1,0 +1,40 @@
+# ---
+# apiVersion: networking.gke.io/v1
+# kind: ManagedCertificate
+# metadata:
+#   name: networking-managed-cert
+# spec:
+#   domains:
+#     - DOMAIN_NAME
+#     - www.DOMAIN_NAME
+# ---
+# apiVersion: networking.gke.io/v1beta1
+# kind: FrontendConfig
+# metadata:
+#   name: networking-fc
+# spec:
+#   redirectToHttps:
+#     enabled: true
+#     responseCodeName: MOVED_PERMANENTLY_DEFAULT
+# ---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  defaultBackend:
+    service:
+      name: portfolio-service
+      port:
+        number: 80
+  # rules:
+  #   - http:
+  #       paths:
+  #         - path: /
+  #           pathType: Prefix
+  #           backend:
+  #             service:
+  #               name: portfolio-service
+  #               port:
+  #                 number: 80
