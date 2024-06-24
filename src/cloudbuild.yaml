@@ -15,7 +15,7 @@ steps:
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
       - run
-      - --filename=deployment.yaml
+      - --filename=portfolio.yaml
       - --location=us-central1
       - --cluster=my-gke-cluster
 timeout: 660s
