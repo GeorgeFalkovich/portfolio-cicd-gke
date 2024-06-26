@@ -26,6 +26,12 @@ COPY apache2.conf /etc/apache2/apache2.conf
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 # RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf
 
+# Configure an ENTRYPOINT to run setup commands prior to CMD.
+# See: https://stackoverflow.com/a/42858351/2932891
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
+
 # Enable Apache modules
 RUN a2enmod rewrite
 RUN a2enmod headers
@@ -34,6 +40,7 @@ RUN a2enmod headers
 EXPOSE 80
 # EXPOSE 3306
 
+ENTRYPOINT ["/entrypoint.sh"]
 # restart Apache and keep docker runing
 CMD service apache2 restart  && tail -f /dev/null
 
