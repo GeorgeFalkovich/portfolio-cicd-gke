@@ -1,0 +1,23 @@
+steps:
+  # Build container
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}",
+        "src/",
+      ]
+    # Push container image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      ["push", "${_LOCATION}-docker.pkg.dev/$_PROJECT_ID/${_AR_REPO}/${_IMAGE}"]
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=portfolio.yaml
+      - --location=us-central1
+      - --cluster=my-gke-cluster
+timeout: 660s
+options:
+  logging: CLOUD_LOGGING_ONLY
