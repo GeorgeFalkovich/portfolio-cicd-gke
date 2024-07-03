@@ -7,7 +7,7 @@
  */
 
 
-define("DB_HOST", "10.128.15.221");
-define("DB_NAME", "portfolio");
-define("DB_USER", "admin");
-define("DB_PASSWORD", "admin");
+define("DB_HOST", "");
+define("DB_NAME", "");
+define("DB_USER", "");
+define("DB_PASSWORD", "");
